@@ -1,0 +1,670 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Scenes/Menu/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Menu/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/quit-btn.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/World/TileSet.tres" type="TileSet" id=4]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Montserrat-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/credits-btn.png" type="Texture" id=7]
+[ext_resource path="res://Assets/help-btn.png" type="Texture" id=8]
+[ext_resource path="res://Assets/CreditsFont.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Assets/back-btn.png" type="Texture" id=10]
+[ext_resource path="res://Assets/circle.png" type="Texture" id=11]
+[ext_resource path="res://Assets/target.png" type="Texture" id=12]
+[ext_resource path="res://Assets/location.png" type="Texture" id=13]
+[ext_resource path="res://Assets/rotate.png" type="Texture" id=14]
+[ext_resource path="res://Assets/arrows.png" type="Texture" id=15]
+[ext_resource path="res://Assets/clock.png" type="Texture" id=16]
+[ext_resource path="res://Assets/flag.png" type="Texture" id=17]
+[ext_resource path="res://Assets/arrow-key-down.png" type="Texture" id=18]
+[ext_resource path="res://Assets/arrow-key-right.png" type="Texture" id=19]
+[ext_resource path="res://Assets/arrow-key-up.png" type="Texture" id=20]
+[ext_resource path="res://Assets/arrow-key-left.png" type="Texture" id=21]
+
+[sub_resource type="DynamicFont" id=1]
+size = 65
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 6 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+collision_mask = 2
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 0, 0, 131072, 0, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 0, 0, 196608, 0, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 0, 0, 262144, 0, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 0, 0, 327680, 0, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 327695, 0, 0, 393216, 0, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 1, 0, 393231, 0, 0, 458752, 0, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 0, 0, 524288, 0, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 133.695, 137.348 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Help" type="HBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1454.0
+margin_top = -236.0
+margin_right = -594.0
+margin_bottom = 236.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/Help"]
+margin_right = 490.0
+margin_bottom = 481.0
+
+[node name="HMovement" type="HBoxContainer" parent="CanvasLayer/Help/HBoxContainer"]
+margin_left = 21.0
+margin_right = 468.0
+margin_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/Help/HBoxContainer/HMovement"]
+margin_top = 20.0
+margin_right = 33.0
+margin_bottom = 43.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 9 )
+text = "use"
+
+[node name="Circle" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/HMovement"]
+self_modulate = Color( 0.0470588, 0.576471, 0.631373, 1 )
+margin_left = 37.0
+margin_right = 101.0
+margin_bottom = 64.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/HMovement/Circle"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -18.6516
+margin_top = -16.6494
+margin_right = 45.3484
+margin_bottom = 47.3506
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer/Help/HBoxContainer/HMovement"]
+margin_left = 105.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 43.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 9 )
+text = "and"
+
+[node name="Circle2" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/HMovement"]
+self_modulate = Color( 0.0470588, 0.576471, 0.631373, 1 )
+margin_left = 144.0
+margin_right = 208.0
+margin_bottom = 64.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/HMovement/Circle2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -18.6516
+margin_top = -16.6494
+margin_right = 45.3484
+margin_bottom = 47.3506
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="CanvasLayer/Help/HBoxContainer/HMovement"]
+margin_left = 212.0
+margin_top = 20.0
+margin_right = 447.0
+margin_bottom = 43.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 9 )
+text = "for horizontal movement"
+
+[node name="TeleportTeleportTarget" type="HBoxContainer" parent="CanvasLayer/Help/HBoxContainer"]
+margin_left = 88.0
+margin_top = 68.0
+margin_right = 402.0
+margin_bottom = 132.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Circle" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/TeleportTeleportTarget"]
+self_modulate = Color( 0.141176, 0.505882, 0.403922, 1 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/TeleportTeleportTarget/Circle"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.6561
+margin_top = -21.9887
+margin_right = 42.3439
+margin_bottom = 42.0113
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Help/HBoxContainer/TeleportTeleportTarget"]
+margin_left = 74.0
+margin_top = 20.0
+margin_right = 240.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 9 )
+text = "teleports you to a"
+align = 1
+
+[node name="Circle2" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/TeleportTeleportTarget"]
+self_modulate = Color( 0.141176, 0.505882, 0.403922, 1 )
+margin_left = 250.0
+margin_right = 314.0
+margin_bottom = 64.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon2" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/TeleportTeleportTarget/Circle2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.6493
+margin_top = -20.6539
+margin_right = 47.3507
+margin_bottom = 44.3461
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="HBoxContainer" parent="CanvasLayer/Help/HBoxContainer"]
+margin_top = 136.0
+margin_right = 490.0
+margin_bottom = 200.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Circle" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/Control"]
+self_modulate = Color( 0.254902, 0.266667, 0.6, 1 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/Control/Circle"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.6561
+margin_top = -20.9887
+margin_right = 67.3439
+margin_bottom = 67.0113
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Help/HBoxContainer/Control"]
+margin_left = 74.0
+margin_top = 20.0
+margin_right = 490.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 9 )
+text = "disables gravity allowing vertical movement"
+align = 1
+
+[node name="Rotate" type="HBoxContainer" parent="CanvasLayer/Help/HBoxContainer"]
+margin_left = 30.0
+margin_top = 204.0
+margin_right = 460.0
+margin_bottom = 268.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Circle" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/Rotate"]
+self_modulate = Color( 0.705882, 0.258824, 0.258824, 1 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/Rotate/Circle"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.6561
+margin_top = -21.9887
+margin_right = 41.3439
+margin_bottom = 42.0113
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Help/HBoxContainer/Rotate"]
+margin_left = 74.0
+margin_top = 20.0
+margin_right = 430.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 9 )
+text = "rotates the world and disables gravity"
+align = 1
+
+[node name="VMovement" type="HBoxContainer" parent="CanvasLayer/Help/HBoxContainer"]
+margin_left = 34.0
+margin_top = 272.0
+margin_right = 456.0
+margin_bottom = 336.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/Help/HBoxContainer/VMovement"]
+margin_top = 20.0
+margin_right = 33.0
+margin_bottom = 43.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 9 )
+text = "use"
+
+[node name="Circle" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/VMovement"]
+self_modulate = Color( 0.0470588, 0.576471, 0.631373, 1 )
+margin_left = 37.0
+margin_right = 101.0
+margin_bottom = 64.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/VMovement/Circle"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -18.6516
+margin_top = -16.6494
+margin_right = 45.3484
+margin_bottom = 47.3506
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer/Help/HBoxContainer/VMovement"]
+margin_left = 105.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 43.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 9 )
+text = "and"
+
+[node name="Circle2" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/VMovement"]
+self_modulate = Color( 0.0470588, 0.576471, 0.631373, 1 )
+margin_left = 144.0
+margin_right = 208.0
+margin_bottom = 64.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/VMovement/Circle2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -18.6516
+margin_top = -16.6494
+margin_right = 45.3484
+margin_bottom = 47.3506
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="CanvasLayer/Help/HBoxContainer/VMovement"]
+margin_left = 212.0
+margin_top = 20.0
+margin_right = 422.0
+margin_bottom = 43.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 9 )
+text = "for vertical movement"
+
+[node name="Speed" type="HBoxContainer" parent="CanvasLayer/Help/HBoxContainer"]
+margin_left = 3.0
+margin_top = 340.0
+margin_right = 486.0
+margin_bottom = 404.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Circle" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/Speed"]
+self_modulate = Color( 0.721569, 0.745098, 0.313726, 1 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/Speed/Circle"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.6561
+margin_top = -21.9887
+margin_right = 42.3439
+margin_bottom = 42.0113
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Help/HBoxContainer/Speed"]
+margin_left = 74.0
+margin_top = 20.0
+margin_right = 483.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 9 )
+text = "increases movement speed and gravity pull"
+align = 1
+
+[node name="Goal" type="HBoxContainer" parent="CanvasLayer/Help/HBoxContainer"]
+margin_left = 143.0
+margin_top = 408.0
+margin_right = 346.0
+margin_bottom = 472.0
+size_flags_horizontal = 4
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Circle" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/Goal"]
+self_modulate = Color( 0.529412, 0.2, 0.301961, 1 )
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Help/HBoxContainer/Goal/Circle"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -17.6516
+margin_top = -19.319
+margin_right = 46.3484
+margin_bottom = 44.681
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Help/HBoxContainer/Goal"]
+margin_left = 74.0
+margin_top = 20.0
+margin_right = 203.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 9 )
+text = "your end goal"
+align = 1
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/Help"]
+margin_left = 494.0
+margin_right = 534.0
+margin_bottom = 481.0
+rect_min_size = Vector2( 40, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Help"]
+margin_left = 538.0
+margin_right = 860.0
+margin_bottom = 481.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Help/VBoxContainer"]
+margin_right = 322.0
+margin_bottom = 413.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 9 )
+text = "Try to keep control of the orange orb by fighting gravity. Find the end goal to complete the game.
+
+Every bounce against a wall flips the gravity vertically. You can only move horizontally unless the gravity is disabled.
+
+There are many powers in the world that can work for or against you. 
+
+Some powers have a timer (effects), there can only be 1 effect active at a time."
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Help/VBoxContainer"]
+margin_top = 417.0
+margin_right = 322.0
+margin_bottom = 481.0
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/Help/VBoxContainer/HBoxContainer"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 168.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+
+[node name="BackButton" parent="CanvasLayer/Help/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
+margin_left = 172.0
+margin_right = 322.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource( 10 )
+
+[node name="Menu" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -328.5
+margin_top = -234.5
+margin_right = 328.5
+margin_bottom = 234.5
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu"]
+margin_right = 657.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 1 )
+text = "GRAVITY CONTROL"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="VBoxContainer" parent="CanvasLayer/Menu"]
+margin_left = 253.0
+margin_top = 130.0
+margin_right = 404.0
+margin_bottom = 398.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" parent="CanvasLayer/Menu/Buttons" instance=ExtResource( 2 )]
+
+[node name="HelpButton" parent="CanvasLayer/Menu/Buttons" instance=ExtResource( 2 )]
+margin_top = 68.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 8 )
+
+[node name="CreditsButton" parent="CanvasLayer/Menu/Buttons" instance=ExtResource( 2 )]
+margin_top = 136.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 7 )
+
+[node name="ExitButton" parent="CanvasLayer/Menu/Buttons" instance=ExtResource( 2 )]
+margin_top = 204.0
+margin_bottom = 268.0
+texture_normal = ExtResource( 3 )
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/Menu"]
+margin_left = 180.0
+margin_top = 448.0
+margin_right = 476.0
+margin_bottom = 469.0
+size_flags_horizontal = 4
+custom_constants/separation = 20
+
+[node name="LastResult" type="Label" parent="CanvasLayer/Menu/VBoxContainer"]
+margin_right = 137.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 2 )
+text = "Last result: 10:10"
+
+[node name="BestResult" type="Label" parent="CanvasLayer/Menu/VBoxContainer"]
+margin_left = 157.0
+margin_right = 296.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 3 )
+text = "Best result: 10:10"
+
+[node name="Credits" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 804.0
+margin_top = -130.0
+margin_right = 1244.0
+margin_bottom = 130.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Code" type="Label" parent="CanvasLayer/Credits"]
+margin_right = 440.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 9 )
+text = "\"art\", code and design by github.com/dvdbrink"
+align = 1
+
+[node name="Music" type="Label" parent="CanvasLayer/Credits"]
+margin_top = 43.0
+margin_right = 440.0
+margin_bottom = 66.0
+custom_fonts/font = ExtResource( 9 )
+text = "music by onemansymphony.bandcamp.com"
+align = 1
+
+[node name="Icons" type="Label" parent="CanvasLayer/Credits"]
+margin_top = 86.0
+margin_right = 440.0
+margin_bottom = 109.0
+custom_fonts/font = ExtResource( 9 )
+text = "icons from uxwing.com"
+align = 1
+
+[node name="Godot" type="Label" parent="CanvasLayer/Credits"]
+margin_top = 129.0
+margin_right = 440.0
+margin_bottom = 152.0
+custom_fonts/font = ExtResource( 9 )
+text = "powered by the godot game engine"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Credits"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 172.0
+margin_right = 440.0
+margin_bottom = 176.0
+
+[node name="BackButton" parent="CanvasLayer/Credits" instance=ExtResource( 2 )]
+margin_left = 145.0
+margin_top = 196.0
+margin_right = 295.0
+margin_bottom = 260.0
+size_flags_horizontal = 4
+texture_normal = ExtResource( 10 )
+
+[node name="Tween" type="Tween" parent="CanvasLayer"]
+[connection signal="pressed" from="CanvasLayer/Help/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_help_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Buttons/HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Credits/BackButton" to="." method="_on_credits_back_button_pressed"]

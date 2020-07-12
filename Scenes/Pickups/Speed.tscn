@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Pickups/Pickup.tscn" type="PackedScene" id=1]
+
+[node name="Speed" instance=ExtResource( 1 )]
+type = 1
+duration = 3.0
+
+[node name="Sprite" parent="." index="0"]
+modulate = Color( 0.721569, 0.745098, 0.313726, 1 )
+
+[node name="Icon" parent="." index="1"]
+self_modulate = Color( 1, 1, 1, 1 )
